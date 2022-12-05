@@ -1,7 +1,7 @@
 const Collectors = require('../collectors');
 
 test('loads', () => {
-    const _ = require('../collectors').maxBy;
+    const _ = require('../collectors').minBy;
 });
 
 test('should test empty array', () => {
