@@ -1,7 +1,7 @@
-const Collectors = require('./collectors');
+const Collectors = require('../collectors');
 
 test('loads', () => {
-    const _ = require('./collectors').toSet;
+    const _ = require('../collectors').toSet;
 });
 
 test('should test empty array', () => {
