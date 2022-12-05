@@ -47,7 +47,17 @@ class Collectors {
     }
 
     static groupBy(keyMapperFunction, valueMapperFunction) {
-        return null;
+        return [
+            (map, element) => {
+                const key = keyMapperFunction(element);
+                if(!map.has(key)) {
+                    map.set(key, []);
+                }
+                map.get(key).push(valueMapperFunction(element));
+                return map;
+            },
+            new Map()
+        ];
     }
 }
 
