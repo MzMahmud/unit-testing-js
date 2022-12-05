@@ -34,9 +34,9 @@ test('should test distinct array', () => {
 
     // when
     const expected = new Map([
-        [1, [1]], 
-        [2, [2]], 
-        [3, [3]]
+        [0, [3]],
+        [1, [1]],
+        [2, [2]]
     ]);
 
     // then
@@ -82,9 +82,9 @@ test('should test multiple times call', () => {
 
     // when
     const expected2 = new Map([
-        [1, [1]], 
-        [2, [2]], 
-        [3, [3]]
+        [0, [3]],
+        [1, [1]],
+        [2, [2]]
     ]);
 
     // then
