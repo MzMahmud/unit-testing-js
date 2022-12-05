@@ -8,6 +8,10 @@ class Collectors {
             new Set()
         ];
     }
+
+    static maxBy(compareFunction) {
+        return null;
+    }
 }
 
 module.exports = Collectors;
