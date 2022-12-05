@@ -45,6 +45,10 @@ class Collectors {
             ''
         ];
     }
+
+    static groupBy(keyMapperFunction, valueMapperFunction) {
+        return null;
+    }
 }
 
 module.exports = Collectors;
