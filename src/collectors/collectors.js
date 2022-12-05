@@ -26,8 +26,19 @@ class Collectors {
         ];
     }
 
-    static minBy() {
-        return null;
+    static minBy(compareFunction) {
+        if (compareFunction == null) {
+            compareFunction = Collectors.#defaultCompareFunction;
+        }
+        return [
+            (max, element) => {
+                if (max === null) {
+                    return element;
+                }
+                return compareFunction(element, max) < 0 ? element : max;
+            },
+            null
+        ];
     }
 }
 
