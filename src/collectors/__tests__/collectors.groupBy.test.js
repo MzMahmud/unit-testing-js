@@ -91,3 +91,11 @@ test('should test multiple times call', () => {
     const output2 = input2.reduce(...Collectors.groupBy(n => n % 3, n => n));
     expect(output2).toEqual(expected2);
 });
+
+test('should throw on missing functions', () => {
+    expect(() => [].reduce(...Collectors.groupBy()))
+        .toThrow("invalid keyMapperFunction");
+
+    expect(() => [].reduce(...Collectors.groupBy(n => n)))
+        .toThrow("invalid valueMapperFunction");
+});

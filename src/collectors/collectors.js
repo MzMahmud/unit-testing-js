@@ -47,6 +47,12 @@ class Collectors {
     }
 
     static groupBy(keyMapperFunction, valueMapperFunction) {
+        if(typeof keyMapperFunction !== 'function') {
+            throw new Error("invalid keyMapperFunction");
+        }
+        if(typeof valueMapperFunction !== 'function') {
+            throw new Error("invalid valueMapperFunction");
+        }
         return [
             (map, element) => {
                 const key = keyMapperFunction(element);
