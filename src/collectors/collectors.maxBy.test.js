@@ -72,3 +72,17 @@ test('should test multiple times call', () => {
     const output2 = input2.reduce(...Collectors.maxBy());
     expect(output2).toEqual(expected2);
 });
+
+
+test('should test with custom function', () => {
+    // given
+    const input = [{ age: 1 }, { age: 4 }, { age: 10 }, { age: 2 }, { age: 10 }];
+
+    // when
+    const expected = { age: 10 };
+    const ageCompareFunction = (a, b) => a.age - b.age;
+
+    // then
+    const output = input.reduce(...Collectors.maxBy(ageCompareFunction));
+    expect(output).toEqual(expected);
+});
