@@ -25,6 +25,10 @@ class Collectors {
             null
         ];
     }
+
+    static minBy() {
+        return null;
+    }
 }
 
 module.exports = Collectors;
