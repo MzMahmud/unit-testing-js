@@ -9,8 +9,21 @@ class Collectors {
         ];
     }
 
+    static #defaultCompareFunction = (a, b) => a === b ? 0 : a < b ? -1 : 1;
+
     static maxBy(compareFunction) {
-        return null;
+        if (compareFunction == null) {
+            compareFunction = Collectors.#defaultCompareFunction;
+        }
+        return [
+            (max, element) => {
+                if (max === null) {
+                    return element;
+                }
+                return compareFunction(element, max) > 0 ? element : max;
+            },
+            null
+        ];
     }
 }
 
