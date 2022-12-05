@@ -1,6 +1,12 @@
 class Collectors {
     static toSet() {
-        return null;
+        return [
+            (set, element) => {
+                set.add(element);
+                return set;
+            },
+            new Set()
+        ];
     }
 }
 

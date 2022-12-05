@@ -51,3 +51,25 @@ test('should test containing duplicate', () => {
     const output = input.reduce(...Collectors.toSet());
     expect(output).toEqual(expected);
 });
+
+test('should test multiple times call', () => {
+    // given
+    const input1 = [1, 2, 1, -1];
+
+    // when
+    const expected1 = new Set([-1, 1, 2]);
+
+    // then
+    const output1 = input1.reduce(...Collectors.toSet());
+    expect(output1).toEqual(expected1);
+
+    // given
+    const input2 = [1, 2, 1];
+
+    // when
+    const expected2 = new Set([1, 2]);
+
+    // then
+    const output2 = input2.reduce(...Collectors.toSet());
+    expect(output2).toEqual(expected2);
+});
