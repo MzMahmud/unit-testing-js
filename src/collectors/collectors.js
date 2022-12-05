@@ -11,10 +11,7 @@ class Collectors {
 
     static #defaultCompareFunction = (a, b) => a === b ? 0 : a < b ? -1 : 1;
 
-    static maxBy(compareFunction) {
-        if (compareFunction == null) {
-            compareFunction = Collectors.#defaultCompareFunction;
-        }
+    static maxBy(compareFunction = Collectors.#defaultCompareFunction) {
         return [
             (max, element) => {
                 if (max === null) {
@@ -26,10 +23,7 @@ class Collectors {
         ];
     }
 
-    static minBy(compareFunction) {
-        if (compareFunction == null) {
-            compareFunction = Collectors.#defaultCompareFunction;
-        }
+    static minBy(compareFunction = Collectors.#defaultCompareFunction) {
         return [
             (max, element) => {
                 if (max === null) {
