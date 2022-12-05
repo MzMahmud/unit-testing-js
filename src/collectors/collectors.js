@@ -34,6 +34,17 @@ class Collectors {
             null
         ];
     }
+
+    static joining(delimiter = ",", prefix = "", suffix = "") {
+        return [
+            (joined, element, index, array) => {
+                const isFirst = index === 0;
+                const isLast = index === (array.length - 1);
+                return `${joined}${isFirst ? prefix : delimiter}${element.toString()}${isLast ? suffix : ""}`
+            },
+            ''
+        ];
+    }
 }
 
 module.exports = Collectors;
