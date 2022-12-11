@@ -73,7 +73,6 @@ test('should test multiple times call', () => {
     expect(output2).toEqual(expected2);
 });
 
-
 test('should test with custom function', () => {
     // given
     const input = [{ age: 1 }, { age: 4 }, { age: 10 }, { age: 2 }, { age: 10 }];
